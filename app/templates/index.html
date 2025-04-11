@@ -1,154 +1,180 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <title>Ankith R - Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Portfolio of Ankith R - A motivated and self-driven developer with expertise in Python, Flask, and web development." />
+    <meta name="keywords" content="Ankith R, Python Developer, Web Development, Flask, Portfolio" />
+    <meta name="author" content="Ankith R" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Ankith R - Portfolio" />
+    <meta property="og:description" content="Portfolio of Ankith R - A motivated and self-driven developer with expertise in Python, Flask, and web development." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}" />
     <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
 </head>
 <body class="is-preload">
 
-    <!-- Header -->
-    <header id="header">
-        <div class="inner">
-            <h1>Hi, I'm <strong>Ankith R</strong></h1>
-            <p>A motivated and self-driven developer with a passion for coding since the age of 12</p>
-        </div>
-    </header>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
-    <!-- Main -->
-    <div id="main">
-        <!-- About -->
-        <section id="about" class="main">
+        <!-- Header -->
+        <header id="header">
             <div class="content">
-                <header class="major">
-                    <h2>About Me</h2>
-                </header>
-                <p>Proficient in Python and C++, with a strong interest in web development and artificial intelligence. 
-                   Experienced in building projects using Flask, Bootstrap, and APIs. Continuously learning and 
-                   creating to stay ahead in the tech world.</p>
+                <div class="inner">
+                    <h1>Hi, I'm <strong>Ankith R</strong></h1>
+                    <p>A motivated and self-driven developer with a passion for coding since the age of 12</p>
+                </div>
             </div>
-        </section>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#accomplishments">Accomplishments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <!-- Skills -->
-        <section id="skills" class="main">
-            <div class="content">
-                <header class="major">
-                    <h2>Technical Skills</h2>
-                </header>
+        <!-- Main -->
+        <div id="main">
+            <!-- About -->
+            <article id="about">
+                <h2 class="major">About Me</h2>
+                <div class="about-content">
+                    <p>👨‍💻 Backend Developer specializing in Python<br>
+                       🔧 Expert in API development and database design<br>
+                       🚀 Experienced with Flask and RESTful services<br>
+                       📚 Continuously learning and creating</p>
+                </div>
+            </article>
+
+            <!-- Skills -->
+            <article id="skills">
+                <h2 class="major">Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>Languages</h3>
+                        <h3>💻 Backend Languages</h3>
                         <ul>
-                            <li>Python</li>
-                            <li>C++</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
+                            <li>🐍 Python</li>
+                            <li>⚡ C++</li>
+                            <li>📜 JavaScript</li>
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3>Frameworks & Tools</h3>
+                        <h3>🛠️ Backend Tools</h3>
                         <ul>
-                            <li>Flask</li>
-                            <li>Bootstrap</li>
-                            <li>Git</li>
-                            <li>Jupyter Notebook</li>
+                            <li>🔥 Flask</li>
+                            <li>📦 Git</li>
+                            <li>📓 Jupyter Notebook</li>
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3>Databases</h3>
+                        <h3>🗄️ Databases</h3>
                         <ul>
-                            <li>PostgreSQL</li>
-                            <li>SQLite</li>
+                            <li>🐘 PostgreSQL</li>
+                            <li>💾 SQLite</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category learning">
+                        <h3>🚀 Learning & Exploring</h3>
+                        <ul>
+                            <li>🤖 AI & Machine Learning</li>
+                            <li>🧠 Deep Learning</li>
+                            <li>🐳 Docker & Containerization</li>
+                            <li>☁️ Cloud Services</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </article>
 
-        <!-- Projects -->
-        <section id="projects" class="main">
-            <div class="content">
-                <header class="major">
-                    <h2>Projects</h2>
-                </header>
+            <!-- Projects -->
+            <article id="projects">
+                <h2 class="major">Projects</h2>
                 <div class="projects-grid">
-                    <article class="project">
-                        <h3>AI Chatbot Website</h3>
-                        <p>Built using Flask, Bootstrap & OpenAI API. Created a functional chatbot website similar to ChatGPT. 
-                           Integrated OpenAI API for real-time chat responses. Designed and connected a SQL database for 
-                           storing user data and chat history.</p>
+                    <div class="project">
+                        <h3>AI Chatbot API</h3>
+                        <p>✨ Built a ChatGPT-like API using Flask and OpenAI<br>
+                           🔒 Secure user authentication and session management<br>
+                           💬 Real-time chat processing with context awareness<br>
+                           📊 SQL database integration for data persistence</p>
                         <a href="https://github.com/Xelpi-Code/AI-chatbot-website-" class="button">View Project</a>
-                    </article>
-                    <article class="project">
-                        <h3>Movie Tier List</h3>
-                        <p>A web application for organizing and rating movies in a tier-list format. 
-                           Features movie database integration and personalized rating system.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Movie API Service</h3>
+                        <p>🎬 RESTful API for movie data management<br>
+                           🔍 Advanced search and filtering capabilities<br>
+                           ⭐ Custom rating system implementation<br>
+                           📊 Efficient database queries and caching</p>
                         <a href="https://github.com/XelpiCode/Movie-tier-list" class="button">View Project</a>
-                    </article>
-                    <article class="project">
-                        <h3>Morse Code Translator Website</h3>
-                        <p>Interactive web-based Morse code translator with real-time conversion. 
-                           Features both text-to-morse and morse-to-text translation capabilities.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Morse Code API</h3>
+                        <p>🔊 Backend service for text-to-morse conversion<br>
+                           📝 Bidirectional translation engine<br>
+                           🎵 Audio generation for morse code<br>
+                           🔒 Secure API endpoints</p>
                         <a href="https://github.com/XelpiCode/Morse-Code-Translator-website" class="button">View Project</a>
-                    </article>
-                    <article class="project">
+                    </div>
+                    <div class="project">
                         <h3>Simple Cafe API</h3>
-                        <p>RESTful API service for a cafe management system. Implements CRUD operations 
-                           for menu items, orders, and inventory management.</p>
+                        <p>☕ RESTful API for cafe management<br>
+                           📦 Complete CRUD operations<br>
+                           🔐 Secure authentication system<br>
+                           📊 Inventory and order tracking</p>
                         <a href="https://github.com/XelpiCode/Simple-Cafe-api" class="button">View Project</a>
-                    </article>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </article>
 
-        <!-- Accomplishments -->
-        <section id="accomplishments" class="main">
-            <div class="content">
-                <header class="major">
-                    <h2>Accomplishments</h2>
-                </header>
-                <div class="accomplishments-grid">
-                    <article class="accomplishment">
-                        <h3>VSSF SPOT100 National Exam</h3>
-                        <p>Winner - Recognized for excellence in science and technology. This prestigious achievement demonstrates 
-                           my strong foundation in scientific principles and technological innovation.</p>
-                    </article>
-                    <!-- Add more accomplishments as they come -->
+            <!-- Accomplishments -->
+            <article id="accomplishments">
+                <h2 class="major">Accomplishments</h2>
+                <div class="accomplishment">
+                    <h3>🏆 VSSF SPOT100 National Exam</h3>
+                    <p>✨ Winner in science and technology<br>
+                       📚 Demonstrated strong foundation in scientific principles<br>
+                       💡 Showcased technological innovation<br>
+                       🎯 Recognized for excellence in STEM</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education" class="main">
-            <div class="content">
-                <header class="major">
-                    <h2>Education</h2>
-                </header>
-                <div class="education-item">
-                    <h3>V.N.S.S. S.N Trust Central School</h3>
-                    <p>Cherthala, Kerala, India</p>
-                    <p>9th Grade (Expected completion: 12/2025)</p>
+                <div class="accomplishment">
+                    <h3>🤖 School AI Exhibition Winner</h3>
+                    <p>✨ First place in AI category<br>
+                       🌐 Developed innovative AI-powered website<br>
+                       💡 Created interactive AI features<br>
+                       🏅 Recognized for technical excellence</p>
                 </div>
-            </div>
-        </section>
+            </article>
 
-        <!-- Contact -->
-        <section id="contact" class="main">
-            <div class="content">
-                <header class="major">
-                    <h2>Contact Me</h2>
-                </header>
+            <!-- Contact -->
+            <article id="contact">
+                <h2 class="major">Contact</h2>
                 <form method="post" action="{{ url_for('main.contact') }}">
+                    {{ form.csrf_token }}
                     <div class="fields">
-                        <div class="field">
+                        <div class="field half">
                             <label for="name">Name</label>
                             <input type="text" name="name" id="name" required />
                         </div>
-                        <div class="field">
+                        <div class="field half">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" required />
                         </div>
@@ -159,22 +185,27 @@
                     </div>
                     <ul class="actions">
                         <li><input type="submit" value="Send Message" class="primary" /></li>
+                        <li><input type="reset" value="Reset" /></li>
                     </ul>
                 </form>
-            </div>
-        </section>
+                <div class="contact-info">
+                    <p>📧 <a href="mailto:ankith3690@gmail.com">ankith3690@gmail.com</a></p>
+                    <p>📱 +91 98765 43210</p>
+                </div>
+                <ul class="icons">
+                    <li><a href="https://github.com/XelpiCode" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+            </article>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Ankith R. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="inner">
-            <ul class="icons">
-                <li><a href="https://github.com/XelpiCode" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                <li><a href="mailto:ankith3690@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-            <p class="copyright">&copy; Ankith R. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- BG -->
+    <div id="bg"></div>
 
     <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
