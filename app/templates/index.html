@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Ankith R - Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <h1>Hi, I'm <strong>Ankith R</strong></h1>
+            <p>A motivated and self-driven developer with a passion for coding since the age of 12</p>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        <!-- About -->
+        <section id="about" class="main">
+            <div class="content">
+                <header class="major">
+                    <h2>About Me</h2>
+                </header>
+                <p>Proficient in Python and C++, with a strong interest in web development and artificial intelligence. 
+                   Experienced in building projects using Flask, Bootstrap, and APIs. Continuously learning and 
+                   creating to stay ahead in the tech world.</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="main">
+            <div class="content">
+                <header class="major">
+                    <h2>Technical Skills</h2>
+                </header>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Tools</h3>
+                        <ul>
+                            <li>Flask</li>
+                            <li>Bootstrap</li>
+                            <li>Git</li>
+                            <li>Jupyter Notebook</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="main">
+            <div class="content">
+                <header class="major">
+                    <h2>Projects</h2>
+                </header>
+                <div class="projects-grid">
+                    <article class="project">
+                        <h3>AI Chatbot Website</h3>
+                        <p>Built using Flask, Bootstrap & OpenAI API. Created a functional chatbot website similar to ChatGPT. 
+                           Integrated OpenAI API for real-time chat responses. Designed and connected a SQL database for 
+                           storing user data and chat history.</p>
+                        <a href="https://github.com/Xelpi-Code/AI-chatbot-website-" class="button">View Project</a>
+                    </article>
+                    <article class="project">
+                        <h3>AI Voice Assistant</h3>
+                        <p>A Python-based voice assistant that can perform various tasks through voice commands. 
+                           Features natural language processing and speech recognition.</p>
+                        <a href="https://github.com/XelpiCode/ai-voice-assistant" class="button">View Project</a>
+                    </article>
+                    <article class="project">
+                        <h3>Virtual Dice</h3>
+                        <p>An interactive virtual dice simulator with a graphical interface. 
+                           Perfect for board games and random number generation needs.</p>
+                        <a href="https://github.com/XelpiCode/virtual-dice" class="button">View Project</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accomplishments -->
+        <section id="accomplishments" class="main">
+            <div class="content">
+                <header class="major">
+                    <h2>Accomplishments</h2>
+                </header>
+                <div class="accomplishments-grid">
+                    <article class="accomplishment">
+                        <h3>VSSF SPOT100 National Exam</h3>
+                        <p>Winner - Recognized for excellence in science and technology. This prestigious achievement demonstrates 
+                           my strong foundation in scientific principles and technological innovation.</p>
+                    </article>
+                    <!-- Add more accomplishments as they come -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="main">
+            <div class="content">
+                <header class="major">
+                    <h2>Education</h2>
+                </header>
+                <div class="education-item">
+                    <h3>V.N.S.S. S.N Trust Central School</h3>
+                    <p>Cherthala, Kerala, India</p>
+                    <p>9th Grade (Expected completion: 12/2025)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="main">
+            <div class="content">
+                <header class="major">
+                    <h2>Contact Me</h2>
+                </header>
+                <form method="post" action="{{ url_for('main.contact') }}">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" required />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="4" required></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" class="primary" /></li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://github.com/XelpiCode" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="mailto:ankith3690@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <p class="copyright">&copy; Ankith R. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html> 
